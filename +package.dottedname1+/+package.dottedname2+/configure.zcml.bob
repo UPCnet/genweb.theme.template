@@ -18,7 +18,6 @@
   <include package=".browser" />
   <include package=".portlets" />
 
-  <cmf:registerDirectory name="{{{theme.name.lower()}}}_images" recursive="True" />
   <cmf:registerDirectory name="{{{theme.name.lower()}}}_custom" recursive="True" />
 
   <include package="plone.resource" file="meta.zcml"/>
@@ -28,7 +27,7 @@
       name="{{{package.dottedname1}}}"
       for="* zope.publisher.interfaces.IRequest"
       provides="zope.traversing.interfaces.ITraversable"
-      factory=".traversal.{{{package.dottedname1}}}Traverser"
+      factory=".traversal.{{{theme.name}}}Traverser"
       />
 
   <plone:static
